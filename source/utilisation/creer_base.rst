@@ -48,21 +48,21 @@ Il vous est proposé de créer la base de données sous PostgreSQL :
 
         -- Création des séquences
 
-        CREATE SEQUENCE emetteur_seq
+        CREATE SEQUENCE openexemple.emetteur_seq
         START WITH 1
         INCREMENT BY 1
         NO MINVALUE
         NO MAXVALUE
         CACHE 1;
 
-        CREATE SEQUENCE service_seq
+        CREATE SEQUENCE openexemple.service_seq
         START WITH 1
         INCREMENT BY 1
         NO MINVALUE
         NO MAXVALUE
         CACHE 1;
 
-        CREATE SEQUENCE courrier_seq
+        CREATE SEQUENCE openexemple.courrier_seq
         START WITH 1
         INCREMENT BY 1
         NO MINVALUE
@@ -71,23 +71,23 @@ Il vous est proposé de créer la base de données sous PostgreSQL :
 
         -- Création des tables
 
-        CREATE TABLE emetteur (
+        CREATE TABLE openexemple.emetteur (
             emetteur          int PRIMARY KEY,  -- clé primaire
             nom               varchar(20),
             prenom            varchar(20)
         );
 
-        CREATE TABLE service (
+        CREATE TABLE openexemple.service (
             service           int PRIMARY KEY,  -- clé primaire
             libelle           varchar(20)
         );
 
-        CREATE TABLE courrier (
+        CREATE TABLE openexemple.courrier (
             courrier          int PRIMARY KEY,           -- clé primaire
             dateenvoi         date,
             objetcourrier     text,
-            emetteur          int REFERENCES emetteur,   -- clé étrangère
-            service           int REFERENCES service     -- clé étrangère
+            emetteur          int REFERENCES openexemple.emetteur,   -- clé étrangère
+            service           int REFERENCES openexemple.service     -- clé étrangère
         );
 
 - Modifier le paramétrage openMairie pour faire un accès à la base créée :
@@ -100,6 +100,6 @@ Il vous est proposé de créer la base de données sous PostgreSQL :
 
 - Accéder avec votre navigateur sur openExemple :
 
-    login : **demo**
+    login : **admin**
     
-    mot de passe : **demo**
+    mot de passe : **admin**

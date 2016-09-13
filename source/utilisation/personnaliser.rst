@@ -17,21 +17,21 @@ Sinon exécutez la requête PostgreSQL suivante : ::
 
     -- insertion de deux émetteurs avec récupération et incrémentation de la table de séquences
     
-    INSERT INTO emetteur (emetteur, nom, prenom) VALUES
-    (nextval('emetteur_seq'), 'dupont', 'pierre'),
-    (nextval('emetteur_seq'), 'durant', 'jacques');
+    INSERT INTO openexemple.emetteur (emetteur, nom, prenom) VALUES
+    (nextval('openexemple.emetteur_seq'), 'dupont', 'pierre'),
+    (nextval('openexemple.emetteur_seq'), 'durant', 'jacques');
 
     -- insertion de deux services avec récupération et incrémentation de la table de séquences
     
-    INSERT INTO service (service, libelle) VALUES
-    (nextval('service_seq'), 'informatique'),
-    (nextval('service_seq'), 'telephonie');
+    INSERT INTO openexemple.service (service, libelle) VALUES
+    (nextval('openexemple.service_seq'), 'informatique'),
+    (nextval('openexemple.service_seq'), 'telephonie');
     
     -- insertion de deux courriers avec récupération et incrémentation de la table de séquences
     
-    INSERT INTO courrier (courrier, dateenvoi, objetcourrier, emetteur, service) VALUES
-    (nextval('courrier_seq'), '2010-12-01', 'Proposition de fourniture de service', 1, 1),
-    (nextval('courrier_seq'), '2010-12-02', 'Envoi de devis pour formation openMairie', 2, 1);
+    INSERT INTO openexemple.courrier (courrier, dateenvoi, objetcourrier, emetteur, service) VALUES
+    (nextval('openexemple.courrier_seq'), '2010-12-01', 'Proposition de fourniture de service', 1, 1),
+    (nextval('openexemple.courrier_seq'), '2010-12-02', 'Envoi de devis pour formation openMairie', 2, 1);
     
 
 
